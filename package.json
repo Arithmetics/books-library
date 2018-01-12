@@ -1,0 +1,32 @@
+{
+  "name": "library-javascript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --progress -p",
+    "watch": "webpack --progress --watch",
+    "server": "webpack-dev-server --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Arithmetics/books-library.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Arithmetics/books-library/issues"
+  },
+  "homepage": "https://github.com/Arithmetics/books-library#readme",
+  "dependencies": {
+    "moment": "^2.20.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.10.0"
+  }
+}

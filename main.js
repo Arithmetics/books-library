@@ -1,3 +1,10 @@
+import moment from 'moment';
+
+
+  console.log("hello from javascript!");
+  console.log(moment().startOf('day').fromNow());
+
+
 let myLibrary = [];
 const bookcase = document.querySelector('#bookcase');
 const formButton = document.querySelector('#newBook');
@@ -75,6 +82,7 @@ function renderPage() {
     readButton.textContent = "Toggle Read";
     readButton.addEventListener('click', function(e){
       let bookIndex = e.target.parentNode.dataset.id;
+      console.log(myLibrary[bookIndex]);
       myLibrary[bookIndex].toggleRead();
       rerenderBook(bookIndex);
     });
@@ -101,8 +109,15 @@ function renderPage() {
 
 function rerenderBook(bookID){
   bookdiv = document.querySelector(`div[data-id="${bookID}"]`);
+  console.log(myLibrary)
   book = myLibrary[bookID];
   bookdiv.innerHTML = '';
+
+  renderbook(bookID);
+}
+
+function renderBook(bookID){
+
   let title = document.createElement('p');
   let author = document.createElement('p');
   let pages = document.createElement('p');
@@ -122,6 +137,7 @@ function rerenderBook(bookID){
   readButton.textContent = "Toggle Read";
   readButton.addEventListener('click', function(e){
     let bookIndex = e.target.parentNode.dataset.id;
+    console.log(bookIndex);
     myLibrary[bookIndex].toggleRead();
     rerenderBook(bookIndex);
   });
@@ -142,9 +158,8 @@ function rerenderBook(bookID){
   bookdiv.appendChild(deleteButton);
 }
 
-
-book1 = new Book("Headlopper", "Andrew M", 200, true);
-book2 = new Book("The Golden Compass", "Idk", 304, false);
+const book1 = new Book("Headlopper", "Andrew M", 200, true);
+const book2 = new Book("The Golden Compass", "Idk", 304, false);
 
 addBookToLibrary(book1);
 addBookToLibrary(book2);
